@@ -1,6 +1,6 @@
 ---
 title: "Documenting Python Packages"
-subtitle: "<font color='green'>Docs</font> or it didn't happen!"
+subtitle: "<font color="green">Docs</font> or it didn't happen!"
 author: "Andrey Smelter"
 institute: "University of Kentucky<br>Markey Cancer Center"
 date: "2019/04/11 (updated: `r Sys.Date()`)"
@@ -15,7 +15,7 @@ output:
 ---
 
 
-# <font color='green'>`$ whoami`</font>
+# <font color="green">`$ whoami`</font>
 
 ### Andrey (pronounced similar to André) Smelter
 ### Postdoctoral Scholar at the <font color='blue'>University of Kentucky Markey Cancer Center</font>
@@ -70,23 +70,23 @@ class: center, middle
 
 # Why write docs?
 
-### You want <font color='green'>people to use</font> your code
+### You want <font color="green">people to use</font> your code
 
-### You want your <font color='green'>code to be better</font>
+### You want your <font color="green">code to be better</font>
 
-### You want <font color='green'>contributors</font>
+### You want <font color="green">contributors</font>
 
-### You will be using <font color='green'>your code in [X] months</font>
+### You will be using <font color="green">your code in [X] months</font>
 
 
 ---
 class: center, middle
 
-# <font color='green'>*To document or not to document?*</font>
+# <font color="green">*To document or not to document?*</font>
 
 > "There is a magical feeling that happens when you release your code. 
   It comes in a variety of ways, but it always hits you the same. 
-  <font color='green'>*Someone is using my code?!*</font> 
+  <font color="green">*Someone is using my code?!*</font> 
   A mix of terror and excitement."
   
 <div class="my-footer">
@@ -119,13 +119,13 @@ background-image: url(resources/pics/MontyPythonAndTheHolyGrailNetflix.jpg)
 ---
 class: center, middle
 
-# <font color='green'>"Batteries Included"</font> Philosophy
+# <font color="green">"Batteries Included"</font> Philosophy
 
-### Having a <font color='green'>rich</font> and <font color='green'>versatile</font> standard library
+### Having a <font color="green">rich</font> and <font color="green">versatile</font> standard library
 
-### Which is <font color='green'>immediately available</font>
+### Which is <font color="green">immediately available</font>
 
-### <font color='green'>Without</font> making the user <font color='green'>download separate</font> packages
+### <font color="green">Without</font> making the user <font color="green">download separate</font> packages
 
 <div class="my-footer">
     <span>
@@ -147,13 +147,13 @@ class: inverse, center, middle
 ---
 # pydoc
 
-### The pydoc module <font color='green'>automatically</font> generates documentation from Python modules.
+### The pydoc module <font color="green">automatically</font> generates documentation from Python modules.
 
 ### The documentation can be presented as:
 
-* pages of <font color='green'>**text on the console**</font>
-* served to a <font color='green'>**web browser**</font>
-* or saved to <font color='green'>**HTML files**</font>
+* pages of <font color="green">**text on the console**</font>
+* served to a <font color="green">**web browser**</font>
+* or saved to <font color="green">**HTML files**</font>
 
 
 <div class="my-footer">
@@ -174,17 +174,17 @@ class: inverse, center, middle
 
 --
 
-* The <font color='green'>**quadratic equation**</font> formula: 
+* The <font color="green">**quadratic equation**</font> formula: 
 
 $$ax^2 + bx + c = 0$$
 
 --
-* The quadratic formula for the <font color='green'>**roots**</font>: 
+* The quadratic formula for the <font color="green">**roots**</font>: 
 
 $$x_{1,2}=\frac{-b \pm \sqrt{b^2-4ac} }{2a}$$
 
 --
-* The <font color='green'>`equations/quadratic.py`</font> module: 
+* The <font color="green">`equations/quadratic.py`</font> module: 
 
 ```{python python.reticulate=FALSE}
 import cmath
@@ -211,7 +211,7 @@ class: inverse
 
 # pydoc
 
-### The pydoc module <font color='green'>"automatically"</font> generates documentation from Python modules
+### The pydoc module <font color="green">"automatically"</font> generates documentation from Python modules
 
 <pre class="remark-code">
 <font color="green">$ python3 -m pydoc equations.quadratic</font>
@@ -231,8 +231,8 @@ FILE
 ---
 # pydoc
 
-* Add <font color='green'>**module-level**</font> docstrig.
-* Add <font color='green'>**function-level**</font> docstring.
+* Add <font color="green">**module-level**</font> docstrig.
+* Add <font color="green">**function-level**</font> docstring.
 
 
 ```{python python.reticulate=FALSE}
@@ -266,7 +266,7 @@ class: inverse
 
 # pydoc
 
-### The pydoc module <font color='green'>automatically</font> generates documentation from Python modules
+### The pydoc module <font color="green">automatically</font> generates documentation from Python modules
 
 <pre class="remark-code">
 <font color="green">$ python3 -m pydoc equations.quadratic</font>
@@ -276,12 +276,12 @@ NAME
     equations.quadratic
 
 DESCRIPTION
-    This module contains routines for finding 
-    roots of quadratic equations.
+    <font color="yellow">This module contains routines for finding 
+    roots of quadratic equations.</font>
 
 FUNCTIONS
     quadratic(a, b, c)
-        Solve quadratic equation.
+        <font color="yellow">Solve quadratic equation.</font>
 
 FILE
     equations/quadratic.py
@@ -290,7 +290,7 @@ FILE
 ---
 # pydoc
 
-* <font color='green'>**Package-level**</font> docstring?
+* <font color="green">**Package-level**</font> docstring?
 
 
 ---
@@ -316,7 +316,7 @@ FILE
 ---
 # pydoc
 
-* Create <font color='green'>`equations/__init__.py`</font> file.
+* Create <font color="green">`equations/__init__.py`</font> file.
 
 ```{python python.reticulate=FALSE}
 """
@@ -351,17 +351,17 @@ NAME
     equations
 
 DESCRIPTION
-    This package provides routines for solving
-    equations.
+    <font color="yellow">This package provides routines for solving
+    equations.</font>
 
 PACKAGE CONTENTS
     quadratic
 
 VERSION
-    0.1.0
+    <font color="yellow">0.1.0</font>
 
 AUTHOR
-    Andrey Smelter
+    <font color="yellow">Andrey Smelter</font>
 
 FILE
     equations/__init__.py
@@ -372,7 +372,7 @@ FILE
 
 # pydoc
 
-* How about <font color='green'>**static HTML**</font> pages?
+* How about <font color="green">**static HTML**</font> pages?
 
 
 ---
@@ -380,7 +380,7 @@ class: inverse
 
 # pydoc
 
-* How about <font color='green'>**static HTML**</font> pages?
+* How about <font color="green">**static HTML**</font> pages?
 
 <pre class="remark-code">
 <font color="green">$ python3 -m pydoc -w equations</font>
@@ -400,7 +400,7 @@ class: inverse
 
 # pydoc
 
-* <font color='green'>**Package-level**</font> HTML doc:
+* <font color="green">**Package-level**</font> HTML doc:
 
 ![](resources/pics/pydocHTMLPackage.png)
 
@@ -409,7 +409,7 @@ class: inverse
 
 # pydoc
 
-* <font color='green'>**Module-level**</font> HTML doc:
+* <font color="green">**Module-level**</font> HTML doc:
 
 ![](resources/pics/pydocHTMLModule.png)
 
@@ -419,12 +419,12 @@ class: inverse
 # pydoc
 
 ### Pros:
-* <font color='green'>**Built-in**</font> docs generator.
-* Used by <font color='green'>`>>> help()`</font> function to pull and display docstrings 
+* <font color="green">**Built-in**</font> docs generator.
+* Used by <font color="green">`>>> help()`</font> function to pull and display docstrings 
   from functions/methods, modules, and packages.
 
 ### Cons:
-* Static HTML docs are very <font color='green'>**retro style**</font>.
+* Static HTML docs are very <font color="green">**retro style**</font>.
 
 
 --
@@ -443,8 +443,8 @@ class: inverse, center, middle
 ---
 # doctest
 
-### Searches for pieces of text that <font color='green'>look like interactive Python sessions</font>. 
-### Then <font color='green'>executes those sessions</font> to verify that they work exactly as shown.
+### Searches for pieces of text that <font color="green">look like interactive Python sessions</font>. 
+### Then <font color="green">executes those sessions</font> to verify that they work exactly as shown.
 
 <div class="my-footer">
     <span>
@@ -466,16 +466,16 @@ class: inverse, center, middle
 def quadratic(a, b, c):
     """Solve quadratic equation.
 
-    For example:
+    {{For example:
     >>> x1, x2 = quadratic(a=2, b=-8, c=-24)
-    >>> x1
+    >>> x1                                       
     (6+0j)
     >>> x2
     (-2+0j)
     >>> 2*x1**2 - 8*x1 - 24
     0j
     >>> 2*x2**2 - 8*x2 - 24
-    0j
+    0j}}
     """
     discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
     x1 = (-b + discriminant) / (2.0 * a)
@@ -484,7 +484,7 @@ def quadratic(a, b, c):
 
 if __name__ == "__main__":
     import doctest
-    print(doctest.testmod())
+    print(doctest.testmod()) #<<
 ```
 
 <div class="my-footer">
@@ -513,39 +513,39 @@ class: inverse
 # doctest
 
 <pre class="remark-code small-55">
-<font color='green'>$ python3 -m equations.quadratic -v</font>
+<font color="green">$ python3 -m equations.quadratic -v</font>
 Trying:
     x1, x2 = quadratic(a=2, b=-8, c=-24)
 Expecting nothing
-ok
+<font color="yellow">ok</font>
 Trying:
     x1
 Expecting:
     (6+0j)
-ok
+<font color="yellow">ok</font>
 Trying:
     x2
 Expecting:
     (-2+0j)
-ok
+<font color="yellow">ok</font>
 Trying:
     2*x1**2 - 8*x1 - 24
 Expecting:
     0j
-ok
+<font color="yellow">ok</font>
 Trying:
     2*x2**2 - 8*x2 - 24
 Expecting:
     0j
-ok
+<font color="yellow">ok</font>
 1 items had no tests:
     __main__
 1 items passed all tests:
    5 tests in __main__.quadratic
 5 tests in 2 items.
 5 passed and 0 failed.
-Test passed.
-TestResults(failed=0, attempted=5)
+<font color="yellow">Test passed.
+TestResults(failed=0, attempted=5)</font>
 </pre>
 
 
@@ -558,8 +558,8 @@ def quadratic(a, b, c):
 
     For example:
     >>> x1, x2 = quadratic(a=2, b=-8, c=-24)
-    >>> x1
-    (8+0j)
+    >>> x1  #<<
+    (8+0j)  #<<
     >>> x2
     (-2+0j)
     >>> 2*x1**2 - 8*x1 - 24
@@ -597,15 +597,15 @@ class: inverse
 File "equations/quadratic.py", line 14, in __main__.quadratic
 Failed example:
     x1
-Expected:
+<font color="yellow">Expected:
     (8+0j)
 Got:
-    (6+0j)
+    (6+0j)</font>
 ======================================================================
 1 items had failures:
    1 of   5 in __main__.quadratic
-Test Failed 1 failures.
-TestResults(failed=1, attempted=5)
+<font color="yellow">Test Failed 1 failures.
+TestResults(failed=1, attempted=5)</font>
 </pre>
 
 
@@ -617,7 +617,7 @@ def quadratic(a, b, c):
     """Solve quadratic equation.
 
     For example:
-    >>> x1, x2 = quadratic(a=0, b=-8, c=-24)
+    >>> x1, x2 = quadratic(a=0, b=-8, c=-24)  #<<
     """
     discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
     x1 = (-b + discriminant) / (2.0 * a)
@@ -650,7 +650,7 @@ class: inverse
 File "equations/quadratic.py", line 13, in __main__.quadratic
 Failed example:
     x1, x2 = quadratic(a=0, b=-8, c=-24)
-Exception raised:
+<font color="yellow">Exception raised:</font>
     Traceback (most recent call last):
       File "/usr/lib64/python3.5/doctest.py", line 1321, in __run
         compileflags, 1), test.globs)
@@ -658,7 +658,7 @@ Exception raised:
         x1, x2 = quadratic(a=0, b=-8, c=-24)
       File "equations/quadratic.py", line 16, in quadratic
         x1 = (-b + discriminant) / (2.0 * a)
-    ZeroDivisionError: complex division by zero
+    <font color="yellow">ZeroDivisionError: complex division by zero</font>
 ======================================================================
 1 items had failures:
    1 of   1 in __main__.quadratic
@@ -676,9 +676,9 @@ def quadratic(a, b, c):
 
     For example:
     >>> x1, x2 = quadratic(a=0, b=-8, c=-24)
-    Traceback (most recent call last):
-    ...
-    ZeroDivisionError: complex division by zero
+    Traceback (most recent call last):  #<<
+    ...                                 #<<
+    ZeroDivisionError: complex division by zero  #<<
     """
     discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
     x1 = (-b + discriminant) / (2.0 * a)
@@ -713,15 +713,15 @@ Expecting:
     Traceback (most recent call last):
     ...
     ZeroDivisionError: complex division by zero
-ok
+<font color="yellow">ok</font>
 1 items had no tests:
     __main__
 1 items passed all tests:
    1 tests in __main__.quadratic
 1 tests in 2 items.
 1 passed and 0 failed.
-Test passed.
-TestResults(failed=0, attempted=1)
+<font color="yellow">Test passed.
+TestResults(failed=0, attempted=1)</font>
 </pre>
 
 
@@ -729,12 +729,12 @@ TestResults(failed=0, attempted=1)
 # doctest
 
 ### Pros:
-* <font color='green'>**Built-in**</font> docs string test.
-* Forces you to write <font color='green'>**high-quality examples**</font> in your doc strings.
-* Makes sure that your doc string is <font color='green'>**up-to-date**</font>.
+* <font color="green">**Built-in**</font> docs string test.
+* Forces you to write <font color="green">**high-quality examples**</font> in your doc strings.
+* Makes sure that your doc string is <font color="green">**up-to-date**</font>.
 
 ### Cons:
-* May not be useful for more <font color='green'>**complex cases**</font>.
+* May not be useful for more <font color="green">**complex cases**</font>.
 
 <div class="my-footer">
     <span>
@@ -776,8 +776,8 @@ class: inverse, center, middle
 ---
 # Sphinx
 
-### Makes it easy to create <font color='green'>beatiful documentation</font> for Python projects.
-### Uses <font color='green'>reStructuredText</font> as its markup language format.
+### Makes it easy to create <font color="green">beatiful documentation</font> for Python projects.
+### Uses <font color="green">reStructuredText</font> as its markup language format.
 
 <div class="my-footer">
     <span>
@@ -850,10 +850,10 @@ class: inverse
 .
 ├── docs
 │   ├── _build
-│   ├── conf.py
-│   ├── index.rst
+│   ├── <font color="yellow">conf.py</font>
+│   ├── <font color="yellow">index.rst</font>
 │   ├── make.bat
-│   ├── Makefile
+│   ├── <font color="yellow">Makefile</font>
 │   ├── _static
 │   └── _templates
 └── equations
@@ -913,13 +913,6 @@ Welcome to equations's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 ```
 
 <div class="my-footer">
@@ -938,23 +931,16 @@ Indices and tables
 Welcome to equations's documentation!
 =====================================
 
-The library for solving equations.
+{{The library for solving equations.
 
 .. note::
     
     The ``equations`` library currently can only solve 
-    quadratic equations.
+    quadratic equations.}}
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 ```
 
 <div class="my-footer">
@@ -992,7 +978,7 @@ dumping search index in English (code: en) ... done
 dumping object inventory... done
 build succeeded.
 
-The HTML pages are in _build/html.
+<font color="yellow">The HTML pages are in _build/html.</font>
 </pre>
 
 <div class="my-footer">
@@ -1025,11 +1011,11 @@ The HTML pages are in _build/html.
 def quadratic(a, b, c):
     """Solve quadratic equation.
     
-    :param float a: a coefficient of a quadratic equation.
-    :param float b: b coefficient of a quadratic equation.
-    :param float c: c coefficient of a quadratic equation.
-    :return: quadratic equation roots.
-    :rtype: :py:class:`tuple`.
+    :param float a: a coefficient of a quadratic equation.  #<<
+    :param float b: b coefficient of a quadratic equation.  #<<
+    :param float c: c coefficient of a quadratic equation.  #<<
+    :return: quadratic equation roots.                      #<< 
+    :rtype: :py:class:`tuple`.                              #<<
     """
     discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
     x1 = (-b + discriminant) / (2.0 * a)
@@ -1050,21 +1036,21 @@ def quadratic(a, b, c):
 # Sphinx: enable `autodoc` extension in `conf.py`
 
 ```{python python.reticulate=FALSE, eval=FALSE}
-import os
-import sys
-sys.path.insert(0, os.path.abspath('..'))
+import os  #<<
+import sys #<<
+sys.path.insert(0, os.path.abspath('..'))  #<<
 
 project = 'equations'
 copyright = '2019, Andrey Smelter'
 author = 'Andrey Smelter'
 release = '0.1.0'
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.intersphinx'
+    'sphinx.ext.autodoc',    #<<
+    'sphinx.ext.viewcode',   #<<
+    'sphinx.ext.intersphinx' #<<
 ]
 
-intersphinx_mapping = {'python':('https://docs.python.org/3',None)}
+intersphinx_mapping = {'python':('https://docs.python.org/3',None)}  #<<
 templates_path = ['_templates']
 html_theme = 'alabaster'
 html_static_path = ['_static']
@@ -1086,10 +1072,10 @@ html_static_path = ['_static']
 The equations API Reference
 ===========================
 
-.. automodule:: equations
+{{.. automodule:: equations
 
 .. automodule:: equations.quadratic
-    :members:
+    :members:}}
 ```
 
 <div class="my-footer">
@@ -1119,15 +1105,7 @@ The library for solving equations.
    :maxdepth: 2
    :caption: Contents:
    
-   api
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   api #<<
 ```
 
 <div class="my-footer">
@@ -1187,10 +1165,10 @@ extensions = [
 ---
 # Sphinx: host on readthedocs.org
 
-* <font color='green'>**Register**</font> an account on readthedocs.org.
-* <font color='green'>**Point**</font> readthedocs to your <font color='green'>**GitHub repo**</font>.
-* Add path to <font color='green'>`requirements.txt`</font> file under advanced settings.
-* Push <font color='green'>**commit to**</font> trigger documentaion <font color='green'>**build**</font>.
+* <font color="green">**Register**</font> an account on readthedocs.org.
+* <font color="green">**Point**</font> readthedocs to your <font color="green">**GitHub repo**</font>.
+* Add path to <font color="green">`requirements.txt`</font> file under advanced settings.
+* Push <font color="green">**commit to**</font> trigger documentaion <font color="green">**build**</font>.
 
 --
 ![](resources/pics/ReadTheDocsBadges.png)
@@ -1201,14 +1179,14 @@ extensions = [
 
 ### Pros:
 
-* Creates <font color='green'>**beatiful**</font> docs.
-* Provides useful <font color='green'>**extensions**</font>.
-* <font color='green'>**Customizable**</font> (templates and themes).
-* Uses <font color='green'>**reStructuredText**</font>.
+* Creates <font color="green">**beatiful**</font> docs.
+* Provides useful <font color="green">**extensions**</font>.
+* <font color="green">**Customizable**</font> (templates and themes).
+* Uses <font color="green">**reStructuredText**</font>.
 
 ### Cons:
 
-* Uses <font color='green'>**reStructuredText**</font> (not really cons).
+* Uses <font color="green">**reStructuredText**</font> (not really cons).
 
 
 ---
@@ -1222,9 +1200,9 @@ class: inverse, center, middle
 ---
 # MkDocs
 
-### MkDocs is a <font color='green'>fast</font>, <font color='green'>simple</font> and <font color='green'>beautiful</font> static site generator for building project documentation.
+### MkDocs is a <font color="green">fast</font>, <font color="green">simple</font> and <font color="green">beautiful</font> static site generator for building project documentation.
 
-### Uses <font color='green'>Markdown</font> as its markup language format.
+### Uses <font color="green">Markdown</font> as its markup language format.
 
 
 <div class="my-footer">
@@ -1253,11 +1231,11 @@ class: inverse
 <font color="green">$ mkdocs new equations</font>
 <font color="green">$ tree equations</font>
 ├── docs
-│   └── index.md
+│   └── <font color="yellow">index.md</font>
 ├── equations
 │   ├── __init__.py
 │   └── quadratic.py
-└── mkdocs.yml
+└── <font color="yellow">mkdocs.yml</font>
 </pre>
 
 <div class="my-footer">
@@ -1291,8 +1269,8 @@ site_name: equations documentation!
 ```{md}
 # Welcome to `equations` documentation!
 
-
 The library for solving equations.
+
 
 ### Note
 
@@ -1351,19 +1329,19 @@ INFO    -  Cleaning site directory
 
 ### Pros:
 
-* <font color='green'>**Lowers**</font> the <font color='green'>**barrier**</font> for writing docs.
-* Focuses on <font color='green'>**high quality prose**</font> docs.
-* Creates <font color='green'>**beatiful**</font> docs.
-* <font color='green'>**Customizable**</font> themes based on Bootstrap.
-* Uses <font color='green'>**Markdown**</font>.
+* <font color="green">**Lowers**</font> the <font color="green">**barrier**</font> for writing docs.
+* Focuses on <font color="green">**high quality prose**</font> docs.
+* Creates <font color="green">**beatiful**</font> docs.
+* <font color="green">**Customizable**</font> themes based on Bootstrap.
+* Uses <font color="green">**Markdown**</font>.
 
 ### Cons:
 
-* Cannot automatically pull <font color='green'>**API docs**</font>.
+* Cannot automatically pull <font color="green">**API docs**</font>.
 
 
 ---
-# Conclusion: \#<font color='green'>write</font>the<font color='green'>docs</font>
+# Conclusion: \#<font color="green">write</font>the<font color="green">docs</font>
 
 ![](resources/pics/EricHolscherSphinxTweet.png)
 
