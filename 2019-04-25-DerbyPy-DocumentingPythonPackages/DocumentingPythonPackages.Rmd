@@ -1,6 +1,6 @@
 ---
 title: "Documenting Python Packages"
-subtitle: "<font color="green">Docs</font> or it didn't happen!"
+subtitle: "<font color='green'>Docs</font> or it didn't happen!"
 author: "Andrey Smelter"
 institute: "University of Kentucky<br>Markey Cancer Center"
 date: "2019/04/11 (updated: `r Sys.Date()`)"
