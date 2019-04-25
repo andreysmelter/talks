@@ -135,4 +135,295 @@ class: center, middle
 </div>
 
 
+---
+class: inverse, center, middle
+
+# pydoc
+
+### built-in
+
+
+---
+# pydoc
+
+### The pydoc module <font color='green'>automatically</font> generates documentation from Python modules.
+
+### The documentation can be presented as:
+
+* pages of <font color='green'>**text on the console**</font>
+* served to a <font color='green'>**web browser**</font>
+* or saved to <font color='green'>**HTML files**</font>
+
+
+<div class="my-footer">
+    <span>
+        <a href="https://docs.python.org/3/library/pydoc.html">
+            [Ref]: https://docs.python.org/3/library/pydoc.html
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/python/cpython/blob/3.7/Lib/pydoc.py">
+            [Ref]: https://github.com/python/cpython/blob/3.7/Lib/pydoc.py
+        </a>
+    </span>
+</div>
+
+---
+
+# Let's use quadratic equation as an example
+
+--
+
+* The <font color='green'>**quadratic equation**</font> formula: 
+
+$$ax^2 + bx + c = 0$$
+
+--
+* The quadratic formula for the <font color='green'>**roots**</font>: 
+
+$$x_{1,2}=\frac{-b \pm \sqrt{b^2-4ac} }{2a}$$
+
+--
+* The <font color='green'>`equations/quadratic.py`</font> module: 
+
+```{python python.reticulate=FALSE}
+import cmath
+
+
+def quadratic(a, b, c):
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/0_example">
+            [Ref]: Example 0.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# pydoc
+
+### The pydoc module <font color='green'>"automatically"</font> generates documentation from Python modules
+
+```
+$ python3 -m pydoc equations.quadratic
+Help on module quadratic:
+
+NAME
+    quadratic
+
+FUNCTIONS
+    quadratic(a, b, c)
+
+FILE
+    /equations/quadratic.py
+```
+
+---
+# pydoc
+
+* Add <font color='green'>module-level</font> docstrig.
+* Add <font color='green'>function-level</font> docstring.
+
+
+```{python python.reticulate=FALSE}
+"""
+This module contains routines for finding 
+roots of quadratic equations.
+"""
+
+import cmath
+
+
+def quadratic(a, b, c):
+    """Solve quadratic equation."""
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/1_example">
+            [Ref]: Example 1.
+        </a>
+    </span>
+</div>
+
+---
+class: inverse
+
+# pydoc
+
+### The pydoc module <font color='green'>automatically</font> generates documentation from Python modules
+
+```
+$ python3 -m pydoc equations.quadratic
+
+Help on module equations.quadratic in equations:
+
+NAME
+    equations.quadratic
+
+DESCRIPTION
+    This module contains routines for finding 
+    roots of quadratic equations.
+
+FUNCTIONS
+    quadratic(a, b, c)
+        Solve quadratic equation.
+
+FILE
+    /equations/quadratic.py
+```
+
+---
+# pydoc
+
+* **Package-level** docstring?
+
+
+---
+class: inverse
+
+# pydoc
+
+```
+$ python3 -m pydoc equations
+
+Help on package equations:
+
+NAME
+    equations
+
+PACKAGE CONTENTS
+    quadratic
+
+FILE
+    (built-in)
+```
+
+
+---
+# pydoc
+
+* Create <font color='green'>`equations/__init__.py`</font> file.
+
+```{python python.reticulate=FALSE}
+"""
+This package provides routines for solving
+equations.
+"""
+
+
+__author__ = "Andrey Smelter"
+__version__ = "0.1.0"
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/2_example">
+            [Ref]: Example 2.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# pydoc
+
+```
+$ python3 -m pydoc equations
+
+Help on package equations:
+
+NAME
+    equations
+
+DESCRIPTION
+    This package provides routines for solving
+    equations.
+
+PACKAGE CONTENTS
+    quadratic
+
+VERSION
+    0.1.0
+
+AUTHOR
+    Andrey Smelter
+
+FILE
+    /equations/__init__.py
+```
+
+---
+
+# pydoc
+
+* How about **static HTML** pages?
+
+
+---
+class: inverse
+
+# pydoc
+
+* How about **static HTML** pages?
+
+```
+$ python3 -m pydoc -w equations
+$ python3 -m pydoc -w equations.quadratic
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/3_example">
+            [Ref]: Example 3.
+        </a>
+    </span>
+</div>
+
+
+---
+
+# pydoc
+
+* Package-level doc:
+
+![](resources/pics/pydocHTMLPackage.png)
+
+---
+
+# pydoc
+
+* Module-level doc:
+
+![](resources/pics/pydocHTMLModule.png)
+
+---
+
+# pydoc
+
+### Pros:
+* **Built-in** docs generator.
+* Used by `>>> help()` function to pull and display docstrings 
+  from functions/methods, modules, and packages.
+
+### Cons:
+* Static HTML docs are very **retro style**.
+
+--
+
+![](resources/pics/SeriousRetroEmojiSmall.jpg)
 
