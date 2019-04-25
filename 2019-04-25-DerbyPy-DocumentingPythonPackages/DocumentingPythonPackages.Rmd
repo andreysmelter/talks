@@ -224,7 +224,7 @@ FUNCTIONS
     quadratic(a, b, c)
 
 FILE
-    /equations/quadratic.py
+    equations/quadratic.py
 ```
 
 
@@ -285,7 +285,7 @@ FUNCTIONS
         Solve quadratic equation.
 
 FILE
-    /equations/quadratic.py
+    equations/quadratic.py
 ```
 
 ---
@@ -367,7 +367,7 @@ AUTHOR
     Andrey Smelter
 
 FILE
-    /equations/__init__.py
+    equations/__init__.py
 ```
 
 
@@ -597,7 +597,7 @@ class: inverse
 ```
 $ python3 -m equations.quadratic
 ======================================================================
-File "/equations/quadratic.py", line 14, in __main__.quadratic
+File "equations/quadratic.py", line 14, in __main__.quadratic
 Failed example:
     x1
 Expected:
@@ -650,7 +650,7 @@ class: inverse
 ```
 $ python3 -m equations.quadratic
 ======================================================================
-File "/equations/quadratic.py", line 13, in __main__.quadratic
+File "equations/quadratic.py", line 13, in __main__.quadratic
 Failed example:
     x1, x2 = quadratic(a=0, b=-8, c=-24)
 Exception raised:
