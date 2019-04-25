@@ -747,3 +747,24 @@ TestResults(failed=0, attempted=1)
     </span>
 </div>
 
+
+---
+class: inverse, center, bottom
+
+background-image: url(resources/pics/CheeseShop.png)
+
+# a.k.a. Python Package Index (PyPI)
+
+<div class="my-footer">
+    <span>
+        <a href="https://wiki.python.org/moin/CheeseShop">
+            [Ref]: https://wiki.python.org/moin/CheeseShop
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://youtu.be/uT3OQECSDoQ">
+            [Ref]: https://youtu.be/uT3OQECSDoQ
+        </a>
+    </span>
+</div>
+
+
