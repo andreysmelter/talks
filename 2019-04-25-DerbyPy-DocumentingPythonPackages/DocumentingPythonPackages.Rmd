@@ -64,3 +64,53 @@ class: inverse, center, middle
     </span>
 </div>
 
+
+---
+class: center, middle
+
+# Why write docs?
+
+### You want <font color='green'>people to use</font> your code
+
+### You want your <font color='green'>code to be better</font>
+
+### You want <font color='green'>contributors</font>
+
+### You will be using <font color='green'>your code in [X] months</font>
+
+---
+class: center, middle
+
+# <font color='green'>*To document or not to document?*</font>
+
+> "There is a magical feeling that happens when you release your code. 
+  It comes in a variety of ways, but it always hits you the same. 
+  <font color='green'>*Someone is using my code?!*</font> 
+  A mix of terror and excitement."
+  
+<div class="my-footer">
+    <span>
+        <a href="https://www.writethedocs.org/guide/writing/beginners-guide-to-docs">
+            [Ref]: https://www.writethedocs.org/guide/writing/beginners-guide-to-docs
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse, center, top
+
+background-image: url(resources/pics/MontyPythonAndTheHolyGrailNetflix.jpg)
+
+# Get Started
+
+### The Python Standard Library
+
+<div class="my-footer">
+    <span>
+        <a href="https://www.netflix.com/title/771476">
+            [Ref]: https://www.netflix.com/title/771476
+        </a>
+    </span>
+</div>
+
