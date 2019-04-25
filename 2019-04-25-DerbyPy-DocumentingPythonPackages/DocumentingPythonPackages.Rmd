@@ -14,6 +14,7 @@ output:
       countIncrementalSlides: false
 ---
 
+
 # <font color='green'>`$ whoami`</font>
 
 ### Andrey (pronounced similar to André) Smelter
@@ -24,4 +25,21 @@ output:
 * <i class="fa fa-linkedin"></i>: [linkedin.com/in/andreysmelter](https://www.linkedin.com/in/andreysmelter/)
 * <i class="fa fa-instagram"></i>: [instagram.com/andreysmelter](https://www.instagram.com/andreysmelter/)
 * <i class="fa fa-twitter"></i>: [twitter.com/smelandr](https://twitter.com/smelandr)
+
+
+---
+background-image: url(resources/pics/WriteTheDocs.jpg)
+
+<div class="my-footer">
+    <span>
+        <a href="https://twitter.com/ThatDocsLady/status/1115921726297247744">
+            [Ref]: https://twitter.com/ThatDocsLady/status/1115921726297247744
+        </a>
+    </span>
+</div>
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
 
