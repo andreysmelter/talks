@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Documenting Python Packages</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Andrey Smelter" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="resources/css/footer-header.css" type="text/css" />
+    <link rel="stylesheet" href="resources/css/my-theme.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Documenting Python Packages
+## <font color='green'>Docs</font> or it didn’t happen!
+### Andrey Smelter
+### 2019/04/11 (updated: 2019-04-25)
+
+---
+
+
+
+# &lt;font color="green"&gt;`$ whoami`&lt;/font&gt;
+
+### Andrey (pronounced similar to André) Smelter
+### Postdoctoral Scholar at the &lt;font color='blue'&gt;University of Kentucky Markey Cancer Center&lt;/font&gt;
+
+### Links:
+* &lt;i class="fa fa-github"&gt;&lt;/i&gt;: [github.com/andreysmelter](https://github.com/andreysmelter)
+* &lt;i class="fa fa-linkedin"&gt;&lt;/i&gt;: [linkedin.com/in/andreysmelter](https://www.linkedin.com/in/andreysmelter/)
+* &lt;i class="fa fa-instagram"&gt;&lt;/i&gt;: [instagram.com/andreysmelter](https://www.instagram.com/andreysmelter/)
+* &lt;i class="fa fa-twitter"&gt;&lt;/i&gt;: [twitter.com/smelandr](https://twitter.com/smelandr)
+
+
+---
+background-image: url(resources/pics/WriteTheDocs.jpg)
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://twitter.com/ThatDocsLady/status/1115921726297247744"&gt;
+            [Ref]: https://twitter.com/ThatDocsLady/status/1115921726297247744
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+---
+class: center, middle
+
+## A regular slide with text or `code`.
+
+
+---
+class: inverse, center, middle
+
+## A transition slide or terminal output.
+
+![](resources/pics/TerminalSmall.gif)
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href=""&gt;
+            [Ref]: Click me!
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: center, middle
+
+# Why write docs?
+
+### You want &lt;font color="green"&gt;people to use&lt;/font&gt; your code
+
+### You want your &lt;font color="green"&gt;code to be better&lt;/font&gt;
+
+### You want &lt;font color="green"&gt;contributors&lt;/font&gt;
+
+### You will be using &lt;font color="green"&gt;your code in [X] months&lt;/font&gt;
+
+
+---
+class: center, middle
+
+# &lt;font color="green"&gt;*To document or not to document?*&lt;/font&gt;
+
+&gt; "There is a magical feeling that happens when you release your code. 
+  It comes in a variety of ways, but it always hits you the same. 
+  &lt;font color="green"&gt;*Someone is using my code?!*&lt;/font&gt; 
+  A mix of terror and excitement."
+  
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://www.writethedocs.org/guide/writing/beginners-guide-to-docs"&gt;
+            [Ref]: https://www.writethedocs.org/guide/writing/beginners-guide-to-docs
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse, center, top
+
+background-image: url(resources/pics/MontyPythonAndTheHolyGrailNetflix.jpg)
+
+# Get Started
+
+### The Python Standard Library
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://www.netflix.com/title/771476"&gt;
+            [Ref]: https://www.netflix.com/title/771476
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: center, middle
+
+# &lt;font color="green"&gt;"Batteries Included"&lt;/font&gt; Philosophy
+
+### Having a &lt;font color="green"&gt;rich&lt;/font&gt; and &lt;font color="green"&gt;versatile&lt;/font&gt; standard library
+
+### Which is &lt;font color="green"&gt;immediately available&lt;/font&gt;
+
+### &lt;font color="green"&gt;Without&lt;/font&gt; making the user &lt;font color="green"&gt;download separate&lt;/font&gt; packages
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://www.python.org/dev/peps/pep-0206"&gt;
+            [Ref]: https://www.python.org/dev/peps/pep-0206
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse, center, middle
+
+# pydoc
+
+### built-in
+
+
+---
+# pydoc
+
+### The pydoc module &lt;font color="green"&gt;automatically&lt;/font&gt; generates documentation from Python modules.
+
+### The documentation can be presented as:
+
+* pages of &lt;font color="green"&gt;**text on the console**&lt;/font&gt;
+* served to a &lt;font color="green"&gt;**web browser**&lt;/font&gt;
+* or saved to &lt;font color="green"&gt;**HTML files**&lt;/font&gt;
+
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://docs.python.org/3/library/pydoc.html"&gt;
+            [Ref]: https://docs.python.org/3/library/pydoc.html
+        &lt;/a&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;a href="https://github.com/python/cpython/blob/3.7/Lib/pydoc.py"&gt;
+            [Ref]: https://github.com/python/cpython/blob/3.7/Lib/pydoc.py
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Let's use quadratic equation as an example
+
+--
+
+* The &lt;font color="green"&gt;**quadratic equation**&lt;/font&gt; formula: 
+
+`$$ax^2 + bx + c = 0$$`
+
+--
+* The quadratic formula for the &lt;font color="green"&gt;**roots**&lt;/font&gt;: 
+
+`$$x_{1,2}=\frac{-b \pm \sqrt{b^2-4ac} }{2a}$$`
+
+--
+* The &lt;font color="green"&gt;`equations/quadratic.py`&lt;/font&gt; module: 
+
+
+```python
+import cmath
+
+
+def quadratic(a, b, c):
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/0_example"&gt;
+            [Ref]: Example 0.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# pydoc
+
+### The pydoc module &lt;font color="green"&gt;"automatically"&lt;/font&gt; generates documentation from Python modules
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m pydoc equations.quadratic&lt;/font&gt;
+Help on module quadratic:
+
+NAME
+    quadratic
+
+FUNCTIONS
+    quadratic(a, b, c)
+
+FILE
+    equations/quadratic.py
+&lt;/pre&gt;
+
+
+---
+# pydoc
+
+* Add &lt;font color="green"&gt;**module-level**&lt;/font&gt; docstrig.
+* Add &lt;font color="green"&gt;**function-level**&lt;/font&gt; docstring.
+
+
+
+```python
+"""
+This module contains routines for finding 
+roots of quadratic equations.
+"""
+
+import cmath
+
+
+def quadratic(a, b, c):
+    """Solve quadratic equation."""
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/1_example"&gt;
+            [Ref]: Example 1.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# pydoc
+
+### The pydoc module &lt;font color="green"&gt;automatically&lt;/font&gt; generates documentation from Python modules
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m pydoc equations.quadratic&lt;/font&gt;
+Help on module equations.quadratic in equations:
+
+NAME
+    equations.quadratic
+
+DESCRIPTION
+    &lt;font color="yellow"&gt;This module contains routines for finding 
+    roots of quadratic equations.&lt;/font&gt;
+
+FUNCTIONS
+    quadratic(a, b, c)
+        &lt;font color="yellow"&gt;Solve quadratic equation.&lt;/font&gt;
+
+FILE
+    equations/quadratic.py
+&lt;/pre&gt;
+
+---
+# pydoc
+
+* &lt;font color="green"&gt;**Package-level**&lt;/font&gt; docstring?
+
+
+---
+class: inverse
+
+# pydoc
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m pydoc equations&lt;/font&gt;
+Help on package equations:
+
+NAME
+    equations
+
+PACKAGE CONTENTS
+    quadratic
+
+FILE
+    (built-in)
+&lt;/pre&gt;
+
+
+---
+# pydoc
+
+* Create &lt;font color="green"&gt;`equations/__init__.py`&lt;/font&gt; file.
+
+
+```python
+"""
+This package provides routines for solving
+equations.
+"""
+
+
+__author__ = "Andrey Smelter"
+__version__ = "0.1.0"
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/2_example"&gt;
+            [Ref]: Example 2.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# pydoc
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m pydoc equations&lt;/font&gt;
+Help on package equations:
+
+NAME
+    equations
+
+DESCRIPTION
+    &lt;font color="yellow"&gt;This package provides routines for solving
+    equations.&lt;/font&gt;
+
+PACKAGE CONTENTS
+    quadratic
+
+VERSION
+    &lt;font color="yellow"&gt;0.1.0&lt;/font&gt;
+
+AUTHOR
+    &lt;font color="yellow"&gt;Andrey Smelter&lt;/font&gt;
+
+FILE
+    equations/__init__.py
+&lt;/pre&gt;
+
+
+---
+
+# pydoc
+
+* How about &lt;font color="green"&gt;**static HTML**&lt;/font&gt; pages?
+
+
+---
+class: inverse
+
+# pydoc
+
+* How about &lt;font color="green"&gt;**static HTML**&lt;/font&gt; pages?
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m pydoc -w equations&lt;/font&gt;
+&lt;font color="green"&gt;$ python3 -m pydoc -w equations.quadratic&lt;/font&gt;
+&lt;/pre&gt;
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/3_example"&gt;
+            [Ref]: Example 3.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+
+# pydoc
+
+* &lt;font color="green"&gt;**Package-level**&lt;/font&gt; HTML doc:
+
+![](resources/pics/pydocHTMLPackage.png)
+
+
+---
+
+# pydoc
+
+* &lt;font color="green"&gt;**Module-level**&lt;/font&gt; HTML doc:
+
+![](resources/pics/pydocHTMLModule.png)
+
+
+---
+
+# pydoc
+
+### Pros:
+* &lt;font color="green"&gt;**Built-in**&lt;/font&gt; docs generator.
+* Used by &lt;font color="green"&gt;`&gt;&gt;&gt; help()`&lt;/font&gt; function to pull and display docstrings 
+  from functions/methods, modules, and packages.
+
+### Cons:
+* Static HTML docs are very &lt;font color="green"&gt;**retro style**&lt;/font&gt;.
+
+
+--
+
+![](resources/pics/SeriousRetroEmojiSmall.jpg)
+
+
+---
+class: inverse, center, middle
+
+# doctest
+
+### built-in
+
+
+---
+# doctest
+
+### Searches for pieces of text that &lt;font color="green"&gt;look like interactive Python sessions&lt;/font&gt;. 
+### Then &lt;font color="green"&gt;executes those sessions&lt;/font&gt; to verify that they work exactly as shown.
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://docs.python.org/3/library/doctest.html"&gt;
+            [Ref]: https://docs.python.org/3/library/doctest.html
+        &lt;/a&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;a href="https://github.com/python/cpython/blob/3.7/Lib/doctest.py"&gt;
+            [Ref]: https://github.com/python/cpython/blob/3.7/Lib/doctest.py
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# doctest
+
+
+```python
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+
+*    For example:
+*    &gt;&gt;&gt; x1, x2 = quadratic(a=2, b=-8, c=-24)
+*    &gt;&gt;&gt; x1                                       
+*    (6+0j)
+*    &gt;&gt;&gt; x2
+*    (-2+0j)
+*    &gt;&gt;&gt; 2*x1**2 - 8*x1 - 24
+*    0j
+*    &gt;&gt;&gt; 2*x2**2 - 8*x2 - 24
+*    0j
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+
+if __name__ == "__main__":
+    import doctest
+*   print(doctest.testmod())
+```
+
+```
+## **********************************************************************
+## File "__main__", line 5, in __main__.quadratic
+## Failed example:
+##     x1, x2 = quadratic(a=2, b=-8, c=-24)
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[0]&gt;", line 1, in &lt;module&gt;
+##         x1, x2 = quadratic(a=2, b=-8, c=-24)
+##       File "&lt;string&gt;", line 15, in quadratic
+##     NameError: global name 'cmath' is not defined
+## **********************************************************************
+## File "__main__", line 6, in __main__.quadratic
+## Failed example:
+##     x1                                       
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[1]&gt;", line 1, in &lt;module&gt;
+##         x1
+##     NameError: name 'x1' is not defined
+## **********************************************************************
+## File "__main__", line 8, in __main__.quadratic
+## Failed example:
+##     x2
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[2]&gt;", line 1, in &lt;module&gt;
+##         x2
+##     NameError: name 'x2' is not defined
+## **********************************************************************
+## File "__main__", line 10, in __main__.quadratic
+## Failed example:
+##     2*x1**2 - 8*x1 - 24
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[3]&gt;", line 1, in &lt;module&gt;
+##         2*x1**2 - 8*x1 - 24
+##     NameError: name 'x1' is not defined
+## **********************************************************************
+## File "__main__", line 12, in __main__.quadratic
+## Failed example:
+##     2*x2**2 - 8*x2 - 24
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[4]&gt;", line 1, in &lt;module&gt;
+##         2*x2**2 - 8*x2 - 24
+##     NameError: name 'x2' is not defined
+## **********************************************************************
+## 1 items had failures:
+##    5 of   5 in __main__.quadratic
+## ***Test Failed*** 5 failures.
+## TestResults(failed=5, attempted=5)
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/4_example/"&gt;
+            [Ref]: Example 4.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# doctest
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m equations.quadratic&lt;/font&gt;
+TestResults(failed=0, attempted=5)
+&lt;/pre&gt;
+
+
+---
+class: inverse
+
+# doctest
+
+&lt;pre class="remark-code small-55"&gt;
+&lt;font color="green"&gt;$ python3 -m equations.quadratic -v&lt;/font&gt;
+Trying:
+    x1, x2 = quadratic(a=2, b=-8, c=-24)
+Expecting nothing
+&lt;font color="yellow"&gt;ok&lt;/font&gt;
+Trying:
+    x1
+Expecting:
+    (6+0j)
+&lt;font color="yellow"&gt;ok&lt;/font&gt;
+Trying:
+    x2
+Expecting:
+    (-2+0j)
+&lt;font color="yellow"&gt;ok&lt;/font&gt;
+Trying:
+    2*x1**2 - 8*x1 - 24
+Expecting:
+    0j
+&lt;font color="yellow"&gt;ok&lt;/font&gt;
+Trying:
+    2*x2**2 - 8*x2 - 24
+Expecting:
+    0j
+&lt;font color="yellow"&gt;ok&lt;/font&gt;
+1 items had no tests:
+    __main__
+1 items passed all tests:
+   5 tests in __main__.quadratic
+5 tests in 2 items.
+5 passed and 0 failed.
+&lt;font color="yellow"&gt;Test passed.
+TestResults(failed=0, attempted=5)&lt;/font&gt;
+&lt;/pre&gt;
+
+
+---
+# doctest
+
+
+```python
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+
+    For example:
+    &gt;&gt;&gt; x1, x2 = quadratic(a=2, b=-8, c=-24)
+*   &gt;&gt;&gt; x1
+*   (8+0j)
+    &gt;&gt;&gt; x2
+    (-2+0j)
+    &gt;&gt;&gt; 2*x1**2 - 8*x1 - 24
+    0j
+    &gt;&gt;&gt; 2*x2**2 - 8*x2 - 24
+    0j
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
+```
+
+```
+## **********************************************************************
+## File "__main__", line 5, in __main__.quadratic
+## Failed example:
+##     x1, x2 = quadratic(a=2, b=-8, c=-24)
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[0]&gt;", line 1, in &lt;module&gt;
+##         x1, x2 = quadratic(a=2, b=-8, c=-24)
+##       File "&lt;string&gt;", line 15, in quadratic
+##     NameError: global name 'cmath' is not defined
+## **********************************************************************
+## File "__main__", line 6, in __main__.quadratic
+## Failed example:
+##     x1  #&lt;&lt;
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[1]&gt;", line 1, in &lt;module&gt;
+##         x1  #&lt;&lt;
+##     NameError: name 'x1' is not defined
+## **********************************************************************
+## File "__main__", line 8, in __main__.quadratic
+## Failed example:
+##     x2
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[2]&gt;", line 1, in &lt;module&gt;
+##         x2
+##     NameError: name 'x2' is not defined
+## **********************************************************************
+## File "__main__", line 10, in __main__.quadratic
+## Failed example:
+##     2*x1**2 - 8*x1 - 24
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[3]&gt;", line 1, in &lt;module&gt;
+##         2*x1**2 - 8*x1 - 24
+##     NameError: name 'x1' is not defined
+## **********************************************************************
+## File "__main__", line 12, in __main__.quadratic
+## Failed example:
+##     2*x2**2 - 8*x2 - 24
+## Exception raised:
+##     Traceback (most recent call last):
+##       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
+##         compileflags, 1) in test.globs
+##       File "&lt;doctest __main__.quadratic[4]&gt;", line 1, in &lt;module&gt;
+##         2*x2**2 - 8*x2 - 24
+##     NameError: name 'x2' is not defined
+## **********************************************************************
+## 1 items had failures:
+##    5 of   5 in __main__.quadratic
+## ***Test Failed*** 5 failures.
+## TestResults(failed=5, attempted=5)
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/5_example/"&gt;
+            [Ref]: Example 5.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# doctest
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m equations.quadratic&lt;/font&gt;
+======================================================================
+File "equations/quadratic.py", line 14, in __main__.quadratic
+Failed example:
+    x1
+&lt;font color="yellow"&gt;Expected:
+    (8+0j)
+Got:
+    (6+0j)&lt;/font&gt;
+======================================================================
+1 items had failures:
+   1 of   5 in __main__.quadratic
+&lt;font color="yellow"&gt;Test Failed 1 failures.
+TestResults(failed=1, attempted=5)&lt;/font&gt;
+&lt;/pre&gt;
+
+
+---
+# doctest
+
+
+```python
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+
+    For example:
+*   &gt;&gt;&gt; x1, x2 = quadratic(a=0, b=-8, c=-24)
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+
+
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/6_example/"&gt;
+            [Ref]: Example 6.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# doctest
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m equations.quadratic&lt;/font&gt;
+======================================================================
+File "equations/quadratic.py", line 13, in __main__.quadratic
+Failed example:
+    x1, x2 = quadratic(a=0, b=-8, c=-24)
+&lt;font color="yellow"&gt;Exception raised:&lt;/font&gt;
+    Traceback (most recent call last):
+      File "/usr/lib64/python3.5/doctest.py", line 1321, in __run
+        compileflags, 1), test.globs)
+      File "&lt;doctest __main__.quadratic[0]&gt;", line 1, in &lt;module&gt;
+        x1, x2 = quadratic(a=0, b=-8, c=-24)
+      File "equations/quadratic.py", line 16, in quadratic
+        x1 = (-b + discriminant) / (2.0 * a)
+    &lt;font color="yellow"&gt;ZeroDivisionError: complex division by zero&lt;/font&gt;
+======================================================================
+1 items had failures:
+   1 of   1 in __main__.quadratic
+Test Failed 1 failures.
+TestResults(failed=1, attempted=1)
+&lt;/pre&gt;
+
+
+---
+# doctest
+
+
+```python
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+
+    For example:
+    &gt;&gt;&gt; x1, x2 = quadratic(a=0, b=-8, c=-24)
+*   Traceback (most recent call last):
+*   ...
+*   ZeroDivisionError: complex division by zero
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+
+
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/7_example/"&gt;
+            [Ref]: Example 7.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# doctest
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ python3 -m equations.quadratic -v&lt;/font&gt;
+Trying:
+    x1, x2 = quadratic(a=0, b=-8, c=-24)
+Expecting:
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: complex division by zero
+&lt;font color="yellow"&gt;ok&lt;/font&gt;
+1 items had no tests:
+    __main__
+1 items passed all tests:
+   1 tests in __main__.quadratic
+1 tests in 2 items.
+1 passed and 0 failed.
+&lt;font color="yellow"&gt;Test passed.
+TestResults(failed=0, attempted=1)&lt;/font&gt;
+&lt;/pre&gt;
+
+
+---
+# doctest
+
+### Pros:
+* &lt;font color="green"&gt;**Built-in**&lt;/font&gt; docs string test.
+* Forces you to write &lt;font color="green"&gt;**high-quality examples**&lt;/font&gt; in your doc strings.
+* Makes sure that your doc string is &lt;font color="green"&gt;**up-to-date**&lt;/font&gt;.
+
+### Cons:
+* May not be useful for more &lt;font color="green"&gt;**complex cases**&lt;/font&gt;.
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/bayes.py#L113"&gt;
+            [Ref]: doctest example from scikit-learn machine learning library.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse, center, bottom
+
+background-image: url(resources/pics/CheeseShop.png)
+
+# a.k.a. Python Package Index (PyPI)
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://wiki.python.org/moin/CheeseShop"&gt;
+            [Ref]: https://wiki.python.org/moin/CheeseShop
+        &lt;/a&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;a href="https://youtu.be/uT3OQECSDoQ"&gt;
+            [Ref]: https://youtu.be/uT3OQECSDoQ
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse, center, middle
+
+# Sphinx
+
+### python3 -m pip install Sphinx
+
+
+---
+# Sphinx
+
+### Makes it easy to create &lt;font color="green"&gt;beatiful documentation&lt;/font&gt; for Python projects.
+### Uses &lt;font color="green"&gt;reStructuredText&lt;/font&gt; as its markup language format.
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://pypi.org/project/Sphinx"&gt;
+            [Ref]: https://pypi.org/project/Sphinx
+        &lt;/a&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;a href="https://github.com/sphinx-doc/sphinx"&gt;
+            [Ref]: https://github.com/sphinx-doc/sphinx
+        &lt;/a&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;a href="http://www.sphinx-doc.org/en/master"&gt;
+            [Ref]: http://www.sphinx-doc.org/en/master
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# Sphinx: `sphinx-quickstart`
+
+```
+$ mkdir docs &amp;&amp; cd docs
+$ sphinx-quickstart
+```
+--
+```
+&gt; Separate source and build directories (y/n) [n]:
+The project name will occur in several places in the built documentation.
+&gt; Project name: equations
+&gt; Author name(s): Andrey Smelter
+&gt; Project release []: 0.1.0
+&gt; Project language [en]: 
+```
+
+--
+```
+Creating file ./conf.py.
+Creating file ./index.rst.
+Creating file ./Makefile.
+Creating file ./make.bat.
+
+Finished: An initial directory structure has been created.
+You should now populate your master file ./index.rst and 
+create other documentation source files. Use the Makefile 
+to build the docs, like so:
+   make builder
+where "builder" is one of the supported builders, 
+e.g. html, latex or linkcheck.
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/"&gt;
+            [Ref]: Example 8.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# Sphinx: `sphinx-quickstart`
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ tree docs&lt;/font&gt;
+.
+├── docs
+│   ├── _build
+│   ├── &lt;font color="yellow"&gt;conf.py&lt;/font&gt;
+│   ├── &lt;font color="yellow"&gt;index.rst&lt;/font&gt;
+│   ├── make.bat
+│   ├── &lt;font color="yellow"&gt;Makefile&lt;/font&gt;
+│   ├── _static
+│   └── _templates
+└── equations
+    ├── __init__.py
+    └── quadratic.py
+&lt;/pre&gt;
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/"&gt;
+            [Ref]: Example 8.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: `conf.py`
+
+
+```python
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
+
+project = 'equations'
+copyright = '2019, Andrey Smelter'
+author = 'Andrey Smelter'
+
+release = '0.1.0'
+
+extensions = [
+]
+
+templates_path = ['_templates']
+
+html_theme = 'alabaster'
+
+html_static_path = ['_static']
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/"&gt;
+            [Ref]: Example 8.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: `index.rst`
+
+
+```rst
+Welcome to equations's documentation!
+=====================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/"&gt;
+            [Ref]: Example 8.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: `index.rst`
+
+
+```rst
+Welcome to equations's documentation!
+=====================================
+
+*The library for solving equations.
+*
+*.. note::
+*    
+*    The ``equations`` library currently can only solve 
+*    quadratic equations.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/"&gt;
+            [Ref]: Example 8.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# Sphinx: `Makefile`
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ make html&lt;/font&gt;
+Running Sphinx v2.0.1
+making output directory... done
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 1 source files that are out of date
+updating environment: 1 added, 0 changed, 0 removed
+reading sources... [100%] index                                                                                                                                                                                    
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [100%] index                                                                                                                                                                                     
+generating indices... genindex
+writing additional pages... search
+copying static files... done
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded.
+
+&lt;font color="yellow"&gt;The HTML pages are in _build/html.&lt;/font&gt;
+&lt;/pre&gt;
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/"&gt;
+            [Ref]: Example 8.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: html docs
+
+![](resources/pics/SphinxInitialDocs.png)
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/"&gt;
+            [Ref]: Example 8.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: write doc string in reStructuredText format
+
+
+```python
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+    
+*   :param float a: a coefficient of a quadratic equation.
+*   :param float b: b coefficient of a quadratic equation.
+*   :param float c: c coefficient of a quadratic equation.
+*   :return: quadratic equation roots.
+*   :rtype: :py:class:`tuple`.
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/"&gt;
+            [Ref]: Example 9.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: enable `autodoc` extension in `conf.py`
+
+
+```python
+*import os
+*import sys
+*sys.path.insert(0, os.path.abspath('..'))
+
+project = 'equations'
+copyright = '2019, Andrey Smelter'
+author = 'Andrey Smelter'
+release = '0.1.0'
+extensions = [
+*   'sphinx.ext.autodoc',
+*   'sphinx.ext.viewcode',
+*   'sphinx.ext.intersphinx'
+]
+
+*intersphinx_mapping = {'python':('https://docs.python.org/3',None)}
+templates_path = ['_templates']
+html_theme = 'alabaster'
+html_static_path = ['_static']
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/"&gt;
+            [Ref]: Example 9.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: add `api.rst` file
+
+
+```rst
+The equations API Reference
+===========================
+
+*.. automodule:: equations
+*
+*.. automodule:: equations.quadratic
+*    :members:
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/"&gt;
+            [Ref]: Example 9.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: add `api.rst` to topic tree
+
+
+```rst
+Welcome to equations's documentation!
+=====================================
+
+The library for solving equations.
+
+.. note::
+    
+    The ``equations`` library currently can only solve 
+    quadratic equations.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+*  api
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/"&gt;
+            [Ref]: Example 9.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: html docs
+
+![](resources/pics/SphinxFrontPage.png)
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/"&gt;
+            [Ref]: Example 9.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: html docs
+
+![](resources/pics/SphinxAPIDocs.png)
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/"&gt;
+            [Ref]: Example 9.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# Sphinx: useful extensions
+
+
+```python
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.intersphinx',
+    'nbsphinx'
+]
+```
+
+
+---
+# Sphinx: host on readthedocs.org
+
+* &lt;font color="green"&gt;**Register**&lt;/font&gt; an account on readthedocs.org.
+* &lt;font color="green"&gt;**Point**&lt;/font&gt; readthedocs to your &lt;font color="green"&gt;**GitHub repo**&lt;/font&gt;.
+* Add path to &lt;font color="green"&gt;`requirements.txt`&lt;/font&gt; file under advanced settings.
+* Push &lt;font color="green"&gt;**commit to**&lt;/font&gt; trigger documentaion &lt;font color="green"&gt;**build**&lt;/font&gt;.
+
+--
+![](resources/pics/ReadTheDocsBadges.png)
+
+
+---
+# Sphinx
+
+### Pros:
+
+* Creates &lt;font color="green"&gt;**beatiful**&lt;/font&gt; docs.
+* Provides useful &lt;font color="green"&gt;**extensions**&lt;/font&gt;.
+* &lt;font color="green"&gt;**Customizable**&lt;/font&gt; (templates and themes).
+* Uses &lt;font color="green"&gt;**reStructuredText**&lt;/font&gt;.
+
+### Cons:
+
+* Uses &lt;font color="green"&gt;**reStructuredText**&lt;/font&gt; (not really cons).
+
+
+---
+class: inverse, center, middle
+
+# MkDocs
+
+### python3 -m pip install mkdocs
+
+
+---
+# MkDocs
+
+### MkDocs is a &lt;font color="green"&gt;fast&lt;/font&gt;, &lt;font color="green"&gt;simple&lt;/font&gt; and &lt;font color="green"&gt;beautiful&lt;/font&gt; static site generator for building project documentation.
+
+### Uses &lt;font color="green"&gt;Markdown&lt;/font&gt; as its markup language format.
+
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://pypi.org/project/mkdocs"&gt;
+            [Ref]: https://pypi.org/project/mkdocs
+        &lt;/a&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;a href="https://github.com/mkdocs/mkdocs"&gt;
+            [Ref]: https://github.com/mkdocs/mkdocs
+        &lt;/a&gt;
+        &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;a href="https://www.mkdocs.org"&gt;
+            [Ref]: https://www.mkdocs.org/
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# MkDocs: quickstart
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ mkdocs new equations&lt;/font&gt;
+&lt;font color="green"&gt;$ tree equations&lt;/font&gt;
+├── docs
+│   └── &lt;font color="yellow"&gt;index.md&lt;/font&gt;
+├── equations
+│   ├── __init__.py
+│   └── quadratic.py
+└── &lt;font color="yellow"&gt;mkdocs.yml&lt;/font&gt;
+&lt;/pre&gt;
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/10_example/"&gt;
+            [Ref]: Example 10.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# MkDocs: `mkdocs.yml`
+
+
+```yaml
+site_name: equations documentation!
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/mkdocs/mkdocs/blob/master/mkdocs.yml"&gt;
+            [Ref]: See more complex mkdocs.yml - https://github.com/mkdocs/mkdocs/blob/master/mkdocs.yml
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# MkDocs: `docs/index.md`
+
+
+```md
+# Welcome to `equations` documentation!
+
+The library for solving equations.
+
+
+### Note
+
+The ``equations`` library currently can only solve 
+quadratic equations.
+```
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/10_example/"&gt;
+            [Ref]: Example 10.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+class: inverse
+
+# MkDocs: html docs
+
+&lt;pre class="remark-code"&gt;
+&lt;font color="green"&gt;$ mkdocs serve&lt;/font&gt;
+INFO    -  Building documentation... 
+INFO    -  Cleaning site directory 
+[I 190425 02:27:22 server:298] Serving on http://127.0.0.1:8000
+[I 190425 02:27:22 handlers:59] Start watching changes
+[I 190425 02:27:22 handlers:61] Start detecting changes
+&lt;/pre&gt;
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/10_example/"&gt;
+            [Ref]: Example 10.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# MkDocs: html docs
+
+![](resources/pics/MkDocsFrontPage.png)
+
+&lt;div class="my-footer"&gt;
+    &lt;span&gt;
+        &lt;a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/10_example/"&gt;
+            [Ref]: Example 10.
+        &lt;/a&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+
+
+---
+# MkDocs
+
+### Pros:
+
+* &lt;font color="green"&gt;**Lowers**&lt;/font&gt; the &lt;font color="green"&gt;**barrier**&lt;/font&gt; for writing docs.
+* Focuses on &lt;font color="green"&gt;**high quality prose**&lt;/font&gt; docs.
+* Creates &lt;font color="green"&gt;**beatiful**&lt;/font&gt; docs.
+* &lt;font color="green"&gt;**Customizable**&lt;/font&gt; themes based on Bootstrap.
+* Uses &lt;font color="green"&gt;**Markdown**&lt;/font&gt;.
+
+### Cons:
+
+* Cannot automatically pull &lt;font color="green"&gt;**API docs**&lt;/font&gt;.
+
+
+---
+# Conclusion: \#&lt;font color="green"&gt;write&lt;/font&gt;the&lt;font color="green"&gt;docs&lt;/font&gt;
+
+![](resources/pics/EricHolscherSphinxTweet.png)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
