@@ -6,7 +6,7 @@ institute: "University of Kentucky<br>Markey Cancer Center"
 date: "2019/04/11 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
-    css: ["default", "default-fonts", "resources/css/footer-header.css", "resources/css/my-theme.css", "resources/css/font-awesome.min.css"]
+    css: ["default", "default-fonts", "resources/css/footer-header.css", "resources/css/my-theme.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"]
     lib_dir: libs
     nature:
       highlightStyle: github
