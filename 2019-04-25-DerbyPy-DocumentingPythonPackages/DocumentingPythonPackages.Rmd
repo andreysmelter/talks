@@ -26,6 +26,8 @@ output:
 * <i class="fa fa-instagram"></i>: [instagram.com/andreysmelter](https://www.instagram.com/andreysmelter/)
 * <i class="fa fa-twitter"></i>: [twitter.com/smelandr](https://twitter.com/smelandr)
 
+### Slides are available: [bit.ly/DerbyPyWTD](http://bit.ly/DerbyPyWTD)
+
 
 ---
 background-image: url(resources/pics/WriteTheDocs.jpg)
@@ -58,7 +60,7 @@ class: inverse, center, middle
 
 <div class="my-footer">
     <span>
-        <a href="">
+        <a href="http://bit.ly/DerbyPyWTD">
             [Ref]: Click me!
         </a>
     </span>
