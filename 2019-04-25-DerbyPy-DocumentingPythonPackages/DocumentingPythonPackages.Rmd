@@ -78,6 +78,7 @@ class: center, middle
 
 ### You will be using <font color='green'>your code in [X] months</font>
 
+
 ---
 class: center, middle
 
@@ -167,8 +168,8 @@ class: inverse, center, middle
     </span>
 </div>
 
----
 
+---
 # Let's use quadratic equation as an example
 
 --
@@ -226,6 +227,7 @@ FILE
     /equations/quadratic.py
 ```
 
+
 ---
 # pydoc
 
@@ -257,6 +259,7 @@ def quadratic(a, b, c):
         </a>
     </span>
 </div>
+
 
 ---
 class: inverse
@@ -367,6 +370,7 @@ FILE
     /equations/__init__.py
 ```
 
+
 ---
 
 # pydoc
@@ -403,6 +407,7 @@ $ python3 -m pydoc -w equations.quadratic
 
 ![](resources/pics/pydocHTMLPackage.png)
 
+
 ---
 
 # pydoc
@@ -410,6 +415,7 @@ $ python3 -m pydoc -w equations.quadratic
 * Module-level doc:
 
 ![](resources/pics/pydocHTMLModule.png)
+
 
 ---
 
@@ -423,7 +429,321 @@ $ python3 -m pydoc -w equations.quadratic
 ### Cons:
 * Static HTML docs are very **retro style**.
 
+
 --
 
 ![](resources/pics/SeriousRetroEmojiSmall.jpg)
+
+
+---
+class: inverse, center, middle
+
+# doctest
+
+### built-in
+
+
+---
+# doctest
+
+### Searches for pieces of text that <font color='green'>look like interactive Python sessions</font>. 
+### Then <font color='green'>executes those sessions</font> to verify that they work exactly as shown.
+
+<div class="my-footer">
+    <span>
+        <a href="https://docs.python.org/3/library/doctest.html">
+            [Ref]: https://docs.python.org/3/library/doctest.html
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/python/cpython/blob/3.7/Lib/doctest.py">
+            [Ref]: https://github.com/python/cpython/blob/3.7/Lib/doctest.py
+        </a>
+    </span>
+</div>
+
+
+---
+# doctest
+
+```{python python.reticulate=FALSE}
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+
+    For example:
+    >>> x1, x2 = quadratic(a=2, b=-8, c=-24)
+    >>> x1
+    (6+0j)
+    >>> x2
+    (-2+0j)
+    >>> 2*x1**2 - 8*x1 - 24
+    0j
+    >>> 2*x2**2 - 8*x2 - 24
+    0j
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/4_example/">
+            [Ref]: Example 4.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# doctest
+
+```
+$ python3 -m equations.quadratic
+TestResults(failed=0, attempted=5)
+```
+
+
+---
+class: inverse
+
+# doctest
+
+<pre class="remark-code small-55">
+$ python3 -m equations.quadratic -v
+Trying:
+    x1, x2 = quadratic(a=2, b=-8, c=-24)
+Expecting nothing
+ok
+Trying:
+    x1
+Expecting:
+    (6+0j)
+ok
+Trying:
+    x2
+Expecting:
+    (-2+0j)
+ok
+Trying:
+    2*x1**2 - 8*x1 - 24
+Expecting:
+    0j
+ok
+Trying:
+    2*x2**2 - 8*x2 - 24
+Expecting:
+    0j
+ok
+1 items had no tests:
+    __main__
+1 items passed all tests:
+   5 tests in __main__.quadratic
+5 tests in 2 items.
+5 passed and 0 failed.
+Test passed.
+TestResults(failed=0, attempted=5)
+</pre>
+
+
+---
+# doctest
+
+```{python python.reticulate=FALSE}
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+
+    For example:
+    >>> x1, x2 = quadratic(a=2, b=-8, c=-24)
+    >>> x1
+    (8+0j)
+    >>> x2
+    (-2+0j)
+    >>> 2*x1**2 - 8*x1 - 24
+    0j
+    >>> 2*x2**2 - 8*x2 - 24
+    0j
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/5_example/">
+            [Ref]: Example 5.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# doctest
+
+```
+$ python3 -m equations.quadratic
+======================================================================
+File "/equations/quadratic.py", line 14, in __main__.quadratic
+Failed example:
+    x1
+Expected:
+    (8+0j)
+Got:
+    (6+0j)
+======================================================================
+1 items had failures:
+   1 of   5 in __main__.quadratic
+Test Failed 1 failures.
+TestResults(failed=1, attempted=5)
+```
+
+
+---
+# doctest
+
+```{python python.reticulate=FALSE, eval=FALSE}
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+
+    For example:
+    >>> x1, x2 = quadratic(a=0, b=-8, c=-24)
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+
+
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/6_example/">
+            [Ref]: Example 6.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# doctest
+
+```
+$ python3 -m equations.quadratic
+======================================================================
+File "/equations/quadratic.py", line 13, in __main__.quadratic
+Failed example:
+    x1, x2 = quadratic(a=0, b=-8, c=-24)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib64/python3.5/doctest.py", line 1321, in __run
+        compileflags, 1), test.globs)
+      File "<doctest __main__.quadratic[0]>", line 1, in <module>
+        x1, x2 = quadratic(a=0, b=-8, c=-24)
+      File "equations/quadratic.py", line 16, in quadratic
+        x1 = (-b + discriminant) / (2.0 * a)
+    ZeroDivisionError: complex division by zero
+======================================================================
+1 items had failures:
+   1 of   1 in __main__.quadratic
+Test Failed 1 failures.
+TestResults(failed=1, attempted=1)
+```
+
+
+---
+# doctest
+
+```{python python.reticulate=FALSE, eval=FALSE}
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+
+    For example:
+    >>> x1, x2 = quadratic(a=0, b=-8, c=-24)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: complex division by zero
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+
+
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/7_example/">
+            [Ref]: Example 7.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# doctest
+
+```
+$ python3 -m equations.quadratic -v
+Trying:
+    x1, x2 = quadratic(a=0, b=-8, c=-24)
+Expecting:
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: complex division by zero
+ok
+1 items had no tests:
+    __main__
+1 items passed all tests:
+   1 tests in __main__.quadratic
+1 tests in 2 items.
+1 passed and 0 failed.
+Test passed.
+TestResults(failed=0, attempted=1)
+```
+
+
+---
+# doctest
+
+### Pros:
+* **Built-in** docs string test.
+* Forces you to write **high-quality examples** in your doc strings.
+* Makes sure that your doc string is **up-to-date**.
+
+### Cons:
+* May not be useful for more **complex cases**.
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/bayes.py#L113">
+            [Ref]: doctest example from scikit-learn machine learning library.
+        </a>
+    </span>
+</div>
 
