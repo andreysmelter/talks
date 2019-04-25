@@ -1213,3 +1213,162 @@ extensions = [
 ### Cons:
 
 * Uses reStructuredText.
+
+
+---
+class: inverse, center, middle
+
+# MkDocs
+
+### python3 -m pip install mkdocs
+
+
+---
+# MkDocs
+
+### MkDocs is a <font color='green'>fast</font>, <font color='green'>simple</font> and <font color='green'>beautiful</font> static site generator for building project documentation.
+
+### Uses <font color='green'>Markdown</font> as its markup language format.
+
+
+<div class="my-footer">
+    <span>
+        <a href="https://pypi.org/project/mkdocs">
+            [Ref]: https://pypi.org/project/mkdocs
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/mkdocs/mkdocs">
+            [Ref]: https://github.com/mkdocs/mkdocs
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.mkdocs.org">
+            [Ref]: https://www.mkdocs.org/
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# MkDocs: quickstart
+
+```
+$ mkdocs new equations
+
+$ tree equations
+├── docs
+│   └── index.md
+├── equations
+│   ├── __init__.py
+│   └── quadratic.py
+└── mkdocs.yml
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/10_example/">
+            [Ref]: Example 10.
+        </a>
+    </span>
+</div>
+
+
+---
+# MkDocs: `mkdocs.yml`
+
+```{yaml}
+site_name: equations documentation!
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/mkdocs/mkdocs/blob/master/mkdocs.yml">
+            [Ref]: See more complex mkdocs.yml - https://github.com/mkdocs/mkdocs/blob/master/mkdocs.yml
+        </a>
+    </span>
+</div>
+
+
+---
+# MkDocs: `docs/index.md`
+
+```{md}
+# Welcome to `equations` documentation!
+
+
+The library for solving equations.
+
+### Note
+
+The ``equations`` library currently can only solve 
+quadratic equations.
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/10_example/">
+            [Ref]: Example 10.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# MkDocs: html docs
+
+```
+$ mkdocs serve
+INFO    -  Building documentation... 
+INFO    -  Cleaning site directory 
+[I 190425 02:27:22 server:298] Serving on http://127.0.0.1:8000
+[I 190425 02:27:22 handlers:59] Start watching changes
+[I 190425 02:27:22 handlers:61] Start detecting changes
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/10_example/">
+            [Ref]: Example 10.
+        </a>
+    </span>
+</div>
+
+
+---
+# MkDocs: html docs
+
+![](resources/pics/MkDocsFrontPage.png)
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/10_example/">
+            [Ref]: Example 10.
+        </a>
+    </span>
+</div>
+
+
+---
+# MkDocs
+
+### Pros:
+
+* Lowers the barrier for writing docs.
+* Focuses on high quality prose docs
+* Creates beatiful docs.
+* Customizable themes based on Bootstrap.
+* Uses Markdown.
+
+### Cons:
+
+* Cannot automatically pull API docs.
+
+
+---
+# Conclusion: \#<font color='green'>write</font>the<font color='green'>docs</font>
+
+![](resources/pics/EricHolscherSphinxTweet.png)
+
