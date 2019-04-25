@@ -768,3 +768,448 @@ background-image: url(resources/pics/CheeseShop.png)
 </div>
 
 
+---
+class: inverse, center, middle
+
+# Sphinx
+
+### python3 -m pip install Sphinx
+
+
+---
+# Sphinx
+
+### Makes it easy to create <font color='green'>beatiful documentation</font> for Python projects.
+### Uses <font color='green'>reStructuredText</font> as its markup language format.
+
+<div class="my-footer">
+    <span>
+        <a href="https://pypi.org/project/Sphinx">
+            [Ref]: https://pypi.org/project/Sphinx
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/sphinx-doc/sphinx">
+            [Ref]: https://github.com/sphinx-doc/sphinx
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="http://www.sphinx-doc.org/en/master">
+            [Ref]: http://www.sphinx-doc.org/en/master
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# Sphinx: `sphinx-quickstart`
+
+```
+$ mkdir docs && cd docs
+$ sphinx-quickstart
+```
+
+--
+```
+> Separate source and build directories (y/n) [n]:
+The project name will occur in several places in the built documentation.
+> Project name: equations
+> Author name(s): Andrey Smelter
+> Project release []: 0.1.0
+> Project language [en]: 
+```
+
+--
+```
+Creating file ./conf.py.
+Creating file ./index.rst.
+Creating file ./Makefile.
+Creating file ./make.bat.
+
+Finished: An initial directory structure has been created.
+You should now populate your master file ./index.rst and 
+create other documentation source files. Use the Makefile 
+to build the docs, like so:
+   make builder
+where "builder" is one of the supported builders, 
+e.g. html, latex or linkcheck.
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/">
+            [Ref]: Example 8.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# Sphinx: `sphinx-quickstart`
+
+```
+$ tree docs
+.
+├── docs
+│   ├── _build
+│   ├── conf.py
+│   ├── index.rst
+│   ├── make.bat
+│   ├── Makefile
+│   ├── _static
+│   └── _templates
+└── equations
+    ├── __init__.py
+    └── quadratic.py
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/">
+            [Ref]: Example 8.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: `conf.py`
+
+```{python python.reticulate=FALSE, eval=FALSE}
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
+
+project = 'equations'
+copyright = '2019, Andrey Smelter'
+author = 'Andrey Smelter'
+
+release = '0.1.0'
+
+extensions = [
+]
+
+templates_path = ['_templates']
+
+html_theme = 'alabaster'
+
+html_static_path = ['_static']
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/">
+            [Ref]: Example 8.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: `index.rst`
+
+```{rst eval=FALSE}
+Welcome to equations's documentation!
+=====================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/">
+            [Ref]: Example 8.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: `index.rst`
+
+```{rst eval=FALSE}
+Welcome to equations's documentation!
+=====================================
+
+The library for solving equations.
+
+.. note::
+    
+    The ``equations`` library currently can only solve 
+    quadratic equations.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/">
+            [Ref]: Example 8.
+        </a>
+    </span>
+</div>
+
+
+---
+class: inverse
+
+# Sphinx: `Makefile`
+
+```
+$ make html
+Running Sphinx v2.0.1
+making output directory... done
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 1 source files that are out of date
+updating environment: 1 added, 0 changed, 0 removed
+reading sources... [100%] index                                                                                                                                                                                    
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [100%] index                                                                                                                                                                                     
+generating indices... genindex
+writing additional pages... search
+copying static files... done
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded.
+
+The HTML pages are in _build/html.
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/">
+            [Ref]: Example 8.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: html docs
+
+![](resources/pics/SphinxInitialDocs.png)
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/8_example/">
+            [Ref]: Example 8.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: write doc string in reStructuredText format
+
+```{python python.reticulate=FALSE, eval=FALSE}
+def quadratic(a, b, c):
+    """Solve quadratic equation.
+    
+    :param float a: a coefficient of a quadratic equation.
+    :param float b: b coefficient of a quadratic equation.
+    :param float c: c coefficient of a quadratic equation.
+    :return: quadratic equation roots.
+    :rtype: :py:class:`tuple`.
+    """
+    discriminant = cmath.sqrt(b**2.0 - 4.0 * a * c)
+    x1 = (-b + discriminant) / (2.0 * a)
+    x2 = (-b - discriminant) / (2.0 * a)
+    return x1, x2
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/">
+            [Ref]: Example 9.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: enable `autodoc` extension in `conf.py`
+
+```{python python.reticulate=FALSE, eval=FALSE}
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
+
+project = 'equations'
+copyright = '2019, Andrey Smelter'
+author = 'Andrey Smelter'
+release = '0.1.0'
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.intersphinx'
+]
+
+intersphinx_mapping = {'python':('https://docs.python.org/3',None)}
+templates_path = ['_templates']
+html_theme = 'alabaster'
+html_static_path = ['_static']
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/">
+            [Ref]: Example 9.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: add `api.rst` file
+
+```{rst eval=FALSE}
+The equations API Reference
+===========================
+
+.. automodule:: equations
+
+.. automodule:: equations.quadratic
+    :members:
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/">
+            [Ref]: Example 9.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: add `api.rst` to topic tree
+
+```{rst eval=FALSE}
+Welcome to equations's documentation!
+=====================================
+
+The library for solving equations.
+
+.. note::
+    
+    The ``equations`` library currently can only solve 
+    quadratic equations.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   api
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+```
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/">
+            [Ref]: Example 9.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: html docs
+
+![](resources/pics/SphinxFrontPage.png)
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/">
+            [Ref]: Example 9.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: html docs
+
+![](resources/pics/SphinxAPIDocs.png)
+
+<div class="my-footer">
+    <span>
+        <a href="https://github.com/andreysmelter/talks/tree/master/2019-04-25-DerbyPy-DocumentingPythonPackages/examples/9_example/">
+            [Ref]: Example 9.
+        </a>
+    </span>
+</div>
+
+
+---
+# Sphinx: useful extensions
+
+```{python python.reticulate=FALSE, eval=FALSE}
+extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.intersphinx',
+    'nbsphinx'
+]
+```
+
+
+---
+# Sphinx: host on readthedocs.org
+
+* <font >Register an account on readthedocs.org.
+* Point readthedocs to your github repo.
+* Add path to `requirements.txt` file under advanced settings.
+* Push commit to trigger documentaion build.
+
+--
+![](resources/pics/ReadTheDocsBadges.png)
+
+
+---
+# Sphinx
+
+### Pros:
+
+* Creates beatiful docs.
+* Provides useful extensions.
+* Customizable (templates and themes).
+* Uses reStructuredText.
+
+### Cons:
+
+* Uses reStructuredText.
