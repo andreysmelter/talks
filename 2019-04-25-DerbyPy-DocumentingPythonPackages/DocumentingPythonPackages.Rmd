@@ -121,7 +121,7 @@ class: center, middle
 
 # <font color='green'>"Batteries Included"</font> Philosophy
 
-### Having a <font color='green'>rich and versatile</font> standard library
+### Having a <font color='green'>rich</font> and <font color='green'>versatile</font> standard library
 
 ### Which is <font color='green'>immediately available</font>
 
@@ -231,8 +231,8 @@ FILE
 ---
 # pydoc
 
-* Add <font color='green'>module-level</font> docstrig.
-* Add <font color='green'>function-level</font> docstring.
+* Add <font color='green'>**module-level**</font> docstrig.
+* Add <font color='green'>**function-level**</font> docstring.
 
 
 ```{python python.reticulate=FALSE}
@@ -291,7 +291,7 @@ FILE
 ---
 # pydoc
 
-* **Package-level** docstring?
+* <font color='green'>**Package-level**</font> docstring?
 
 
 ---
@@ -375,7 +375,7 @@ FILE
 
 # pydoc
 
-* How about **static HTML** pages?
+* How about <font color='green'>**static HTML**</font> pages?
 
 
 ---
@@ -383,7 +383,7 @@ class: inverse
 
 # pydoc
 
-* How about **static HTML** pages?
+* How about <font color='green'>**static HTML**</font> pages?
 
 ```
 $ python3 -m pydoc -w equations
@@ -403,7 +403,7 @@ $ python3 -m pydoc -w equations.quadratic
 
 # pydoc
 
-* Package-level doc:
+* <font color='green'>**Package-level**</font> HTML doc:
 
 ![](resources/pics/pydocHTMLPackage.png)
 
@@ -412,7 +412,7 @@ $ python3 -m pydoc -w equations.quadratic
 
 # pydoc
 
-* Module-level doc:
+* <font color='green'>**Module-level**</font> HTML doc:
 
 ![](resources/pics/pydocHTMLModule.png)
 
@@ -422,12 +422,12 @@ $ python3 -m pydoc -w equations.quadratic
 # pydoc
 
 ### Pros:
-* **Built-in** docs generator.
-* Used by `>>> help()` function to pull and display docstrings 
+* <font color='green'>**Built-in**</font> docs generator.
+* Used by <font color='green'>`>>> help()`</font> function to pull and display docstrings 
   from functions/methods, modules, and packages.
 
 ### Cons:
-* Static HTML docs are very **retro style**.
+* Static HTML docs are very <font color='green'>**retro style**</font>.
 
 
 --
@@ -732,12 +732,12 @@ TestResults(failed=0, attempted=1)
 # doctest
 
 ### Pros:
-* **Built-in** docs string test.
-* Forces you to write **high-quality examples** in your doc strings.
-* Makes sure that your doc string is **up-to-date**.
+* <font color='green'>**Built-in**</font> docs string test.
+* Forces you to write <font color='green'>**high-quality examples**</font> in your doc strings.
+* Makes sure that your doc string is <font color='green'>**up-to-date**</font>.
 
 ### Cons:
-* May not be useful for more **complex cases**.
+* May not be useful for more <font color='green'>**complex cases**</font>.
 
 <div class="my-footer">
     <span>
@@ -1191,10 +1191,10 @@ extensions = [
 ---
 # Sphinx: host on readthedocs.org
 
-* <font >Register an account on readthedocs.org.
-* Point readthedocs to your github repo.
-* Add path to `requirements.txt` file under advanced settings.
-* Push commit to trigger documentaion build.
+* <font color='green'>**Register**</font> an account on readthedocs.org.
+* <font color='green'>**Point**</font> readthedocs to your <font color='green'>**GitHub repo**</font>.
+* Add path to <font color='green'>`requirements.txt`</font> file under advanced settings.
+* Push <font color='green'>**commit to**</font> trigger documentaion <font color='green'>**build**</font>.
 
 --
 ![](resources/pics/ReadTheDocsBadges.png)
@@ -1205,14 +1205,14 @@ extensions = [
 
 ### Pros:
 
-* Creates beatiful docs.
-* Provides useful extensions.
-* Customizable (templates and themes).
-* Uses reStructuredText.
+* Creates <font color='green'>**beatiful**</font> docs.
+* Provides useful <font color='green'>**extensions**</font>.
+* <font color='green'>**Customizable**</font> (templates and themes).
+* Uses <font color='green'>**reStructuredText**</font>.
 
 ### Cons:
 
-* Uses reStructuredText.
+* Uses <font color='green'>**reStructuredText**</font> (not really cons).
 
 
 ---
@@ -1356,15 +1356,15 @@ INFO    -  Cleaning site directory
 
 ### Pros:
 
-* Lowers the barrier for writing docs.
-* Focuses on high quality prose docs
-* Creates beatiful docs.
-* Customizable themes based on Bootstrap.
-* Uses Markdown.
+* <font color='green'>**Lowers**</font> the <font color='green'>**barrier**</font> for writing docs.
+* Focuses on <font color='green'>**high quality prose**</font> docs.
+* Creates <font color='green'>**beatiful**</font> docs.
+* <font color='green'>**Customizable**</font> themes based on Bootstrap.
+* Uses <font color='green'>**Markdown**</font>.
 
 ### Cons:
 
-* Cannot automatically pull API docs.
+* Cannot automatically pull <font color='green'>**API docs**</font>.
 
 
 ---
