@@ -13,3 +13,15 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
+
+# <font color='green'>`$ whoami`</font>
+
+### Andrey (pronounced similar to André) Smelter
+### Postdoctoral Scholar at the <font color='blue'>University of Kentucky Markey Cancer Center</font>
+
+### Links:
+* <i class="fa fa-github"></i>: [github.com/andreysmelter](https://github.com/andreysmelter)
+* <i class="fa fa-linkedin"></i>: [linkedin.com/in/andreysmelter](https://www.linkedin.com/in/andreysmelter/)
+* <i class="fa fa-instagram"></i>: [instagram.com/andreysmelter](https://www.instagram.com/andreysmelter/)
+* <i class="fa fa-twitter"></i>: [twitter.com/smelandr](https://twitter.com/smelandr)
+
