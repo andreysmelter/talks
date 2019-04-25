@@ -213,8 +213,8 @@ class: inverse
 
 ### The pydoc module <font color='green'>"automatically"</font> generates documentation from Python modules
 
-```
-$ python3 -m pydoc equations.quadratic
+<pre class="remark-code">
+<font color="green">$ python3 -m pydoc equations.quadratic</font>
 Help on module quadratic:
 
 NAME
@@ -225,7 +225,7 @@ FUNCTIONS
 
 FILE
     equations/quadratic.py
-```
+</pre>
 
 
 ---
@@ -268,9 +268,8 @@ class: inverse
 
 ### The pydoc module <font color='green'>automatically</font> generates documentation from Python modules
 
-```
-$ python3 -m pydoc equations.quadratic
-
+<pre class="remark-code">
+<font color="green">$ python3 -m pydoc equations.quadratic</font>
 Help on module equations.quadratic in equations:
 
 NAME
@@ -286,7 +285,7 @@ FUNCTIONS
 
 FILE
     equations/quadratic.py
-```
+</pre>
 
 ---
 # pydoc
@@ -299,9 +298,8 @@ class: inverse
 
 # pydoc
 
-```
-$ python3 -m pydoc equations
-
+<pre class="remark-code">
+<font color="green">$ python3 -m pydoc equations</font>
 Help on package equations:
 
 NAME
@@ -312,7 +310,7 @@ PACKAGE CONTENTS
 
 FILE
     (built-in)
-```
+</pre>
 
 
 ---
@@ -345,9 +343,8 @@ class: inverse
 
 # pydoc
 
-```
-$ python3 -m pydoc equations
-
+<pre class="remark-code">
+<font color="green">$ python3 -m pydoc equations</font>
 Help on package equations:
 
 NAME
@@ -368,7 +365,7 @@ AUTHOR
 
 FILE
     equations/__init__.py
-```
+</pre>
 
 
 ---
@@ -385,10 +382,10 @@ class: inverse
 
 * How about <font color='green'>**static HTML**</font> pages?
 
-```
-$ python3 -m pydoc -w equations
-$ python3 -m pydoc -w equations.quadratic
-```
+<pre class="remark-code">
+<font color="green">$ python3 -m pydoc -w equations</font>
+<font color="green">$ python3 -m pydoc -w equations.quadratic</font>
+</pre>
 
 <div class="my-footer">
     <span>
@@ -504,10 +501,10 @@ class: inverse
 
 # doctest
 
-```
-$ python3 -m equations.quadratic
+<pre class="remark-code">
+<font color="green">$ python3 -m equations.quadratic</font>
 TestResults(failed=0, attempted=5)
-```
+</pre>
 
 
 ---
@@ -516,7 +513,7 @@ class: inverse
 # doctest
 
 <pre class="remark-code small-55">
-$ python3 -m equations.quadratic -v
+<font color='green'>$ python3 -m equations.quadratic -v</font>
 Trying:
     x1, x2 = quadratic(a=2, b=-8, c=-24)
 Expecting nothing
@@ -594,8 +591,8 @@ class: inverse
 
 # doctest
 
-```
-$ python3 -m equations.quadratic
+<pre class="remark-code">
+<font color="green">$ python3 -m equations.quadratic</font>
 ======================================================================
 File "equations/quadratic.py", line 14, in __main__.quadratic
 Failed example:
@@ -609,7 +606,7 @@ Got:
    1 of   5 in __main__.quadratic
 Test Failed 1 failures.
 TestResults(failed=1, attempted=5)
-```
+</pre>
 
 
 ---
@@ -647,8 +644,8 @@ class: inverse
 
 # doctest
 
-```
-$ python3 -m equations.quadratic
+<pre class="remark-code">
+<font color="green">$ python3 -m equations.quadratic</font>
 ======================================================================
 File "equations/quadratic.py", line 13, in __main__.quadratic
 Failed example:
@@ -667,7 +664,7 @@ Exception raised:
    1 of   1 in __main__.quadratic
 Test Failed 1 failures.
 TestResults(failed=1, attempted=1)
-```
+</pre>
 
 
 ---
@@ -708,8 +705,8 @@ class: inverse
 
 # doctest
 
-```
-$ python3 -m equations.quadratic -v
+<pre class="remark-code">
+<font color="green">$ python3 -m equations.quadratic -v</font>
 Trying:
     x1, x2 = quadratic(a=0, b=-8, c=-24)
 Expecting:
@@ -725,7 +722,7 @@ ok
 1 passed and 0 failed.
 Test passed.
 TestResults(failed=0, attempted=1)
-```
+</pre>
 
 
 ---
@@ -808,7 +805,6 @@ class: inverse
 $ mkdir docs && cd docs
 $ sphinx-quickstart
 ```
-
 --
 ```
 > Separate source and build directories (y/n) [n]:
@@ -849,8 +845,8 @@ class: inverse
 
 # Sphinx: `sphinx-quickstart`
 
-```
-$ tree docs
+<pre class="remark-code">
+<font color="green">$ tree docs</font>
 .
 ├── docs
 │   ├── _build
@@ -863,7 +859,7 @@ $ tree docs
 └── equations
     ├── __init__.py
     └── quadratic.py
-```
+</pre>
 
 <div class="my-footer">
     <span>
@@ -975,8 +971,8 @@ class: inverse
 
 # Sphinx: `Makefile`
 
-```
-$ make html
+<pre class="remark-code">
+<font color="green">$ make html</font>
 Running Sphinx v2.0.1
 making output directory... done
 building [mo]: targets for 0 po files that are out of date
@@ -997,7 +993,7 @@ dumping object inventory... done
 build succeeded.
 
 The HTML pages are in _build/html.
-```
+</pre>
 
 <div class="my-footer">
     <span>
@@ -1253,17 +1249,16 @@ class: inverse
 
 # MkDocs: quickstart
 
-```
-$ mkdocs new equations
-
-$ tree equations
+<pre class="remark-code">
+<font color="green">$ mkdocs new equations</font>
+<font color="green">$ tree equations</font>
 ├── docs
 │   └── index.md
 ├── equations
 │   ├── __init__.py
 │   └── quadratic.py
 └── mkdocs.yml
-```
+</pre>
 
 <div class="my-footer">
     <span>
@@ -1319,14 +1314,14 @@ class: inverse
 
 # MkDocs: html docs
 
-```
-$ mkdocs serve
+<pre class="remark-code">
+<font color="green">$ mkdocs serve</font>
 INFO    -  Building documentation... 
 INFO    -  Cleaning site directory 
 [I 190425 02:27:22 server:298] Serving on http://127.0.0.1:8000
 [I 190425 02:27:22 handlers:59] Start watching changes
 [I 190425 02:27:22 handlers:61] Start detecting changes
-```
+</pre>
 
 <div class="my-footer">
     <span>
