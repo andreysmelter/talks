@@ -114,3 +114,25 @@ background-image: url(resources/pics/MontyPythonAndTheHolyGrailNetflix.jpg)
     </span>
 </div>
 
+
+---
+class: center, middle
+
+# <font color='green'>"Batteries Included"</font> Philosophy
+
+### Having a <font color='green'>rich and versatile</font> standard library
+
+### Which is <font color='green'>immediately available</font>
+
+### <font color='green'>Without</font> making the user <font color='green'>download separate</font> packages
+
+<div class="my-footer">
+    <span>
+        <a href="https://www.python.org/dev/peps/pep-0206">
+            [Ref]: https://www.python.org/dev/peps/pep-0206
+        </a>
+    </span>
+</div>
+
+
+
