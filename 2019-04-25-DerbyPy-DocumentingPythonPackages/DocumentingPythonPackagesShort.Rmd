@@ -1031,5 +1031,15 @@ INFO    -  Cleaning site directory
 ---
 # Conclusion: \#<font color="green">write</font>the<font color="green">docs</font>
 
+### It <font color="green">teaches</font> you about your own code.
+### It puts you in the shoes of software <font color="green">users</font>.
+### It forces you to create <font color="green">high-quality examples</font>.
+### It forces you to think about <font color="green">better API design</font> for your software.
+
+
+---
+# Conclusion: \#<font color="green">write</font>the<font color="green">docs</font>
+
 ![](resources/pics/EricHolscherSphinxTweet.png)
 
+* It <font color="green">**fits**</font> so nicely into <font color="green">**development workflow**</font> that people forget about it.
