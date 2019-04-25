@@ -43,3 +43,24 @@ options(htmltools.dir.version = FALSE)
 ```
 
 
+---
+class: center, middle
+
+## A regular slide with text or `code`.
+
+
+---
+class: inverse, center, middle
+
+## A transition slide or terminal output.
+
+![](resources/pics/TerminalSmall.gif)
+
+<div class="my-footer">
+    <span>
+        <a href="">
+            [Ref]: Click me!
+        </a>
+    </span>
+</div>
+
